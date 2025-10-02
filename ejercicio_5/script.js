@@ -74,3 +74,19 @@ console.log("5.5:", legendsPlayers);
   { name: 'Reven', age: 43, gameMorePlayed: 'LEAGUE OF LEGENDS' }
 ]
 */
+const streamers = [
+  { name: 'Rubius', age: 32, gameMorePlayed: 'Minecraft' },
+  { name: 'Ibai', age: 25, gameMorePlayed: 'League of Legends' },
+  { name: 'Reven', age: 43, gameMorePlayed: 'League of Legends' },
+  { name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us' }
+];
+
+// Seleccionamos el input
+const input = document.querySelector('[data-function="toFilterStreamers"]');
+
+// Escuchamos cada vez que el usuario escribe
+input.addEventListener('input', (event) => {
+  const value = event.target.value;  // lo que escribe el usuario
+  const filtered = streamers.filter(s => s.name.toLowerCase().includes(value.toLowerCase()));
+  console.log(filtered);
+});
